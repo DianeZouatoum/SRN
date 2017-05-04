@@ -53,8 +53,10 @@
       /// <param name="contactName"></param>
       /// <param name="publicKey"></param>
       public ContactCard( System.String contactName, System.Byte[] publicKey )
-      {
+      {    
           throw new System.NotImplementedException();
+          this.contactName=contactName;
+          this.publicKey=publicKey;
       }
       
     #endregion
@@ -77,6 +79,9 @@
       public void SaveToFile(System.String fileName)
       {
         throw new System.NotImplementedException();
+       // System.IO.StreamWriter file =new System.IO.StreamWriter(fileName, true);
+        //file.WriteLine( contactName);
+        // file.WriteLine( publicKey);
       }
     
     #endregion
