@@ -55,6 +55,8 @@
       public ContactCard( System.String contactName, System.Byte[] publicKey )
       {
           throw new System.NotImplementedException();
+      
+          this.contactName=contactName;
       }
       
     #endregion
@@ -68,6 +70,16 @@
       public void LoadFromFile(System.String fileName)
       {
         throw new System.NotImplementedException();
+      
+         using(StreamReader reader= new StreamReader(fileName))
+         {
+           System.String my_publicKey;
+           this.contactName= reader.ReadLine();
+           my_publicKey=reader.ReadLine();
+           this.publicKey= Encoding.ASCII.GetBytes(my_publicKey);
+           
+           
+         }
       }
       
       /// <summary>
@@ -77,6 +89,14 @@
       public void SaveToFile(System.String fileName)
       {
         throw new System.NotImplementedException();
+        
+        using(StreamWriter writer= new Streamwriter(fileName))
+        {
+           // writer.Writer(this.contactName);
+              writer.WriteLine(this.contactName);
+            // writer.Writer(publicKey.ToString());
+             writer.WriteLine(publicKey.ToString());
+        }
       }
     
     #endregion
