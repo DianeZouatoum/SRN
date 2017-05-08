@@ -57,6 +57,8 @@
           throw new System.NotImplementedException();
       
           this.contactName=contactName;
+          this.publicKey= new System.Byte[1024];    // die Länge habe ich willkürlich ausgewählt
+          this.publicKey=publicKey;
       }
       
     #endregion
